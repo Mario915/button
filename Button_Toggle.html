@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>button toggle</title>
+</head>
+<body>
+<style>
+body {
+    margin: 0;
+    background-color: #e7f2e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    background-color: #3decb1;
+    font-size: 12px;
+    font-style: italic;
+}
+
+input[type="checkbox"] {
+    width: 200px;
+    height: 100px;
+    appearance: none;
+    background-color: #dae2da;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 16px 1px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+}
+
+input:checked[type='checkbox'] {
+    background-color: #3decb1;
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: #edf3f1;
+    border-radius: 50px;
+    position: absolute;
+    box-shadow: 0px 4px 8px 1px rgba( 0 , 0, 0, 0.25);
+    transform: scale(1.1);
+    top: 0;
+    left: 0;
+    transition: .3s;
+}
+
+input:checked[type='checkbox']::before{
+    left: 100px;
+}
+</style>
+
+    <input type="checkbox">
+
+    <button onclick="aumentar">0</button>
+</body>
+
+<script>
+    let numero = 0
+
+    function aumentar() {
+        numero = numero + 1
+        mostrarNaTela()
+    }
+
+    function mostrarNaTela() {
+        const p = document.querySelector("p")
+        p.innerText = numero
+    }
+
+    mostrarNaTela()
+</script>
+</html>
